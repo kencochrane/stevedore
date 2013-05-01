@@ -19,4 +19,5 @@ api.add_route('/result', result)
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
     srv = make_server('localhost', 8080, wsgi_app)
+    print "Starting server http://localhost:8080"
     srv.serve_forever()
