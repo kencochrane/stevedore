@@ -12,8 +12,10 @@ result = ResultResource()
 
 
 # things will handle all requests to the '/things' URL path
-api.add_route('/task', task)
-api.add_route('/result', result)
+api.add_route('/task/', task)
+api.add_route('/task/{task_id}/', task)
+api.add_route('/result/', result)
+api.add_route('/result/{result_id}/', result)
 
 
 if __name__ == '__main__':
