@@ -37,7 +37,7 @@ class ResultRouting(testing.TestBase):
         self.assertEquals(self.srmock.status, falcon.HTTP_200)
         self.assertTrue(self.resource_result.called)
 
-    def test_get_with_task_id(self):
+    def test_get_with_result_id(self):
         self.simulate_request('/result/1/')
         self.assertEquals(self.srmock.status, falcon.HTTP_200)
         self.assertTrue(self.resource_result.called)
@@ -53,12 +53,12 @@ class ResultDetailRouting(testing.TestBase):
         self.api.add_route('/result/{result_id}/detail/{detail_id}/', self.resource_detail)
 
     def test_get(self):
-        self.simulate_request('/result/')
+        self.simulate_request('/result/1/detail/')
         self.assertEquals(self.srmock.status, falcon.HTTP_200)
         self.assertTrue(self.resource_detail.called)
 
-    def test_get_with_task_id(self):
-        self.simulate_request('/result/1/')
+    def test_get_with_result_detail_id(self):
+        self.simulate_request('/result/1/detail/42/')
         self.assertEquals(self.srmock.status, falcon.HTTP_200)
         self.assertTrue(self.resource_detail.called)
 

@@ -59,6 +59,6 @@ class ResultDetailResource(GenericResource):
 
     def on_get(self, req, resp, result_id, detail_id=None):
         """Handles GET requests"""
-        self.logger.debug("get: result")
+        self.logger.debug("get: result detail")
         resp.status = falcon.HTTP_200
         resp.body = 'Result Details!'
