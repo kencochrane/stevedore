@@ -1,6 +1,5 @@
 import falcon
 import logging
-import types
 
 
 class GenericResource(object):
